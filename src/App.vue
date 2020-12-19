@@ -7,7 +7,7 @@
           <router-link to="/kanban" class="btn btn-link">Kanban</router-link>
         </section>
         <section class="navbar-center">
-          <img class="img-resposive img-logo" src="@/assets/logo.png" alt="Logo">
+          <img class="img-resposive img-logo" src="@/assets/task-list-icon.jpg" alt="Logo">
         </section>
         <section class="navbar-section">
           <a href="" class="btn btn-link">GitHub</a>
