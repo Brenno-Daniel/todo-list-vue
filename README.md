@@ -1,4 +1,5 @@
 # todo-list
+App simples de um todo-list criado em vue.js =)
 
 ## Project setup
 ```
