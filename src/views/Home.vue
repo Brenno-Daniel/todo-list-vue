@@ -1,6 +1,5 @@
 <template>
   <div class="container grid-xs py-2">
-        <img class="img-icon" src="@/assets/task-list-icon.jpg" alt="Ícone de lista de tarefas">
         <form @submit.prevent="addTodo(todo)">
         <div class="input-group">
             <input 
