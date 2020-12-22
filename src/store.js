@@ -14,7 +14,7 @@ const actions = {
                 commit('addTodo', todo)
                 commit('setLoading', false)
                 resolve(todo)
-            }, 1000)
+            }, 500)
         })
     },
 
@@ -24,6 +24,16 @@ const actions = {
 
     removeTodo({commit}, todo) {
         commit('removeTodo', todo)
+    }
+}
+
+const getters = {
+    uncheckeds(state) {
+        return state.todos.filter(todo => todo.checked === false)
+    },
+
+    checkeds(state) {
+        return state.todos.filter(todo => todo.checked);
     }
 }
 
@@ -46,17 +56,13 @@ const mutations = {
 
     removeTodo(state, payload) {
         state.todos = state.todos.filter(item => item.id !== payload.id)
-
-        // const index = state.todos.findIndex(item => item.id === payload.id);
-        // if (index > -1) {
-        //     Vue.delete(state.todos, index);
-        // }
     }
 }
 
 const store = new Vuex.Store({
     state,
     actions,
+    getters,
     mutations
 })
 

@@ -25,6 +25,9 @@ export default {
 </script>
 
 <style scope>
+.navbar {
+  margin: 30px 0px;
+}
 .img-logo {
   max-width: 100px;
 }
