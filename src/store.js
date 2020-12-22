@@ -18,12 +18,22 @@ const actions = {
         })
     },
 
-    toggleTodo({commit}, todo) {
+    toggleTodo({ commit }, todo) {
         commit('toggleTodo', todo)
     },
 
-    removeTodo({commit}, todo) {
+    removeTodo({ commit }, todo) {
         commit('removeTodo', todo)
+    },
+
+    checkAll({ commit, state }) {
+        const uncheckedsIds = state.todos.filter(i => !i.checked).map(i => i.id)
+        commit('toggleList', uncheckedsIds)
+    },
+
+    uncheckAll({ commit, state }) {
+        const checkeds = state.todos.filter(i => i.checked).map(i => i.id)
+        commit('toggleList', checkeds)
     }
 }
 
@@ -56,6 +66,13 @@ const mutations = {
 
     removeTodo(state, payload) {
         state.todos = state.todos.filter(item => item.id !== payload.id)
+    },
+
+    toggleList(state, todosIds) {
+        const todos = state.todos.map(i => {
+            return todosIds.includes(i.id) ? {...i, checked: !i.checked} : i
+        })
+        state.todos = todos
     }
 }
 
