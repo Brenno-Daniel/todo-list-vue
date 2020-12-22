@@ -10,7 +10,7 @@
           <img class="img-resposive img-logo" src="@/assets/task-list-icon.jpg" alt="Logo">
         </section>
         <section class="navbar-section">
-          <a href="" class="btn btn-link">GitHub</a>
+          <a href="https://github.com/Brenno-Daniel" class="btn btn-link">GitHub</a>
         </section>
       </header>
       <router-view class="pt-2" />
