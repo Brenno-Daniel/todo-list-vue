@@ -31,6 +31,10 @@
               @click="uncheckAll"
               v-if="checkeds.length > 0"
               class="btn btn-link float-right">Desmarcar tudo</button>
+            <button 
+              @click="removeAllCheckeds"
+              v-if="checkeds.length > 0"
+              class="btn btn-link float-right text-error">Remover tudo</button>
           </div>        
         </div>
       </div>
@@ -48,7 +52,7 @@ export default {
       ...mapGetters(["uncheckeds", "checkeds"])
     },
     methods: {
-      ...mapActions(["removeTodo", "toggleTodo", "checkAll", "uncheckAll"])
+      ...mapActions(["removeTodo", "toggleTodo", "checkAll", "uncheckAll", "removeAllCheckeds"])
     }
 }
 </script>
